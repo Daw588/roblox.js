@@ -43,18 +43,18 @@ const coinsStore = new DataStore(game, "Coins");
 Luau
 ```lua
 local success, errorMessage = pcall(function()
-	coinsStore:SetAsync("User_1234", 50)
+    coinsStore:SetAsync("User_1234", 50)
 end)
 if not success then
-	print(errorMessage)
+    print(errorMessage)
 end
 ```
 Javascript + Roblox.js
 ```js
 try {
-	await coinsStore.SetAsync("User_1234", 50);
+    await coinsStore.SetAsync("User_1234", 50);
 } catch (e) {
-	console.log(e);
+    console.log(e);
 }
 ```
 
@@ -62,19 +62,19 @@ try {
 Luau
 ```lua
 local success, coins = pcall(function()
-	return coinsStore:GetAsync("User_1234")
+    return coinsStore:GetAsync("User_1234")
 end)
 if success then
-	print(coins) -- Output: 50
+    print(coins) -- Output: 50
 end
 ```
 Javascript + Roblox.js
 ```js
 try {
-	const [coins] = await coinsStore.GetAsync("User_1234");
-	console.log(coins); // Output: 50
+    const [coins] = await coinsStore.GetAsync("User_1234");
+    console.log(coins); // Output: 50
 } catch (e) {
-	console.log(e);
+    console.log(e);
 }
 ```
 
@@ -82,19 +82,19 @@ try {
 Luau
 ```lua
 local success, newCoins = pcall(function()
-	return coinsStore:IncrementAsync("User_1234", 1)
+    return coinsStore:IncrementAsync("User_1234", 1)
 end)
 if success then
-	print(newCoins) -- Output: 51
+    print(newCoins) -- Output: 51
 end
 ```
 Javascript + Roblox.js
 ```js
 try {
-	const [newCoins] = await coinsStore.IncrementAsync("User_1234", 1);
-	console.log(newCoins); // Output: 51
+    const [newCoins] = await coinsStore.IncrementAsync("User_1234", 1);
+    console.log(newCoins); // Output: 51
 } catch (e) {
-	console.log(e);
+    console.log(e);
 }
 ```
 
@@ -102,19 +102,19 @@ try {
 Luau
 ```lua
 local success, removedValue = pcall(function()
-	return nicknameStore:RemoveAsync("User_1234")
+    return nicknameStore:RemoveAsync("User_1234")
 end)
 if success then
-	print(removedValue)
+    print(removedValue)
 end
 ```
 Javascript + Roblox.js
 ```js
 try {
-	const [removedCoins] = await coinsStore.RemoveAsync("User_1234");
-	console.log(removedCoins); // Output: 51
+    const [removedCoins] = await coinsStore.RemoveAsync("User_1234");
+    console.log(removedCoins); // Output: 51
 } catch (e) {
-	console.log(e);
+    console.log(e);
 }
 ```
 
@@ -123,33 +123,33 @@ Luau
 ```lua
 local pages = coinsStore:ListKeysAsync()
 while true do
-	local items = pages:GetCurrentPage()
-	for _, v in pairs(items) do
-		print(v.KeyName)
-	end
-	if pages.IsFinished then break end
-	pages:AdvanceToNextPageAsync()
-	task.wait(1)
+    local items = pages:GetCurrentPage()
+    for _, v in pairs(items) do
+        print(v.KeyName)
+    end
+    if pages.IsFinished then break end
+    pages:AdvanceToNextPageAsync()
+    task.wait(1)
 end
 ```
 Javascript + Roblox.js
 ```js
 // Roblox task.wait() implementation in Javascript
 function wait(seconds) {
-	return new Promise(resolve => setTimeout(resolve, seconds * 1000));
+    return new Promise(resolve => setTimeout(resolve, seconds * 1000));
 }
 
 const pages = datastore.ListKeysAsync();
 let page;
 
 while (page = await pages) {
-	const keys = await page.GetCurrentPageAsync();
-	for (const v of keys) {
-		console.log(v.key);
-	}
-	if (page.isFinished) break;
-	await page.AdvanceToNextPageAsync();
-	await wait(1);
+    const keys = await page.GetCurrentPageAsync();
+    for (const v of keys) {
+        console.log(v.key);
+    }
+    if (page.isFinished) break;
+    await page.AdvanceToNextPageAsync();
+    await wait(1);
 }
 ```
 
@@ -157,18 +157,18 @@ while (page = await pages) {
 Luau
 ```lua
 local success, errorMessage = pcall(function()
-	coinsStore:SetAsync("User_1234", 50, {1234})
+    coinsStore:SetAsync("User_1234", 50, {1234})
 end)
 if not success then
-	print(errorMessage)
+    print(errorMessage)
 end
 ```
 Javascript + Roblox.js
 ```js
 try {
-	coinsStore.SetAsync("User_1234", 50, [1234]);
+    coinsStore.SetAsync("User_1234", 50, [1234]);
 } catch (e) {
-	console.log(e);
+    console.log(e);
 }
 ```
 
@@ -177,27 +177,27 @@ Luau
 ```lua
 local setOptions = Instance.new("DataStoreSetOptions")
 setOptions:SetMetadata({
-	["ExperienceElement"] = "Fire"
+    ["ExperienceElement"] = "Fire"
 })
 
 local success, errorMessage = pcall(function()
-	coinsStore:SetAsync("User_1234", 50, {1234}, setOptions)
+    coinsStore:SetAsync("User_1234", 50, {1234}, setOptions)
 end)
 if not success then
-	print(errorMessage)
+    print(errorMessage)
 end
 ```
 Javascript + Roblox.js
 ```js
 const setOptions = new DataStoreSetOptions();
 setOptions.SetMetadata({
-	ExperienceElement: "Fire"
+    ExperienceElement: "Fire"
 });
 
 try {
-	coinsStore.SetAsync("User_1234", 50, [1234], setOptions);
+    coinsStore.SetAsync("User_1234", 50, [1234], setOptions);
 } catch (e) {
-	console.log(e);
+    console.log(e);
 }
 ```
 That's it. More will be coming soon!
