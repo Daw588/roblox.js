@@ -29,7 +29,7 @@ local coinsStore = DataStoreService:GetDataStore("Coins")
 ```
 On the other hand, in Javascript, you will write this.
 ```js
-const { Game, DataStore } from "roblox.js";
+const { Game, DataStore } from "@daw588/roblox.js";
 const game = new Game("your-api-key", 0000000000);
 const coinsStore = new DataStore(game, "Coins");
 ```

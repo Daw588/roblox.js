@@ -335,13 +335,13 @@ export class DataStore {
 				rawValue = JSON.stringify(value);
 				break;
 			case "string":
-				rawValue = value;
+				rawValue = JSON.stringify(value);
 				break;
 			case "boolean":
 				rawValue = (value) ? "true" : "false";
 				break;
 			case "bigint":
-				rawValue = value.toString();
+				rawValue = JSON.stringify(value.toString());
 				break;
 			case "undefined":
 				throw Error("Value cannot be undefined");
@@ -356,8 +356,6 @@ export class DataStore {
 		const dataSizeMB = Buffer.from(rawValue).byteLength / 1e+6;
 		if (dataSizeMB >= 4) throw Error("Value cannot be larger than 4MB");
 
-		console.log(userIds, JSON.stringify(userIds));
-
 		const headers: SetEntryHeaders = {
 			"x-api-key": this.game.apiKey,
 			"content-md5": crypto.createHash("md5").update(rawValue).digest("base64"),
@@ -368,7 +366,7 @@ export class DataStore {
 		const response = await fetch(url, {
 			method: "post",
 			headers: headers,
-			body: rawValue
+			body: rawValue // Must be in JSON format
 		});
 
 		if (response.status !== 200) {
