@@ -1,0 +1,44 @@
+{
+	"root": true,
+	"rules": {
+		"indent": ["error", "tab", {"SwitchCase": 1}],
+		"brace-style": ["error", "1tbs"],
+		"semi": ["error", "always"],
+		"quotes": ["error", "double"],
+		"comma-style": ["error", "last"],
+		"no-unreachable": "error",
+		"no-unreachable-loop": "error",
+		"no-unused-vars": "error",
+		"no-unused-labels": "error",
+		"no-unused-expressions": "error",
+		"no-eval": "error",
+		"no-fallthrough": "error",
+		"no-script-url": "error",
+		"semi-spacing": "error"
+	},
+	"overrides": [
+		{
+			"files": ["**/*.ts"],
+			"plugins": [
+				"@typescript-eslint"
+			],
+			"extends": [
+				"eslint:recommended",
+				"plugin:@typescript-eslint/eslint-recommended",
+				"plugin:@typescript-eslint/recommended"
+			],
+			"parser": "@typescript-eslint/parser",
+			"parserOptions": {
+				"project": ["./tsconfig.json"]
+			}
+		},
+		{
+			"files": ["**/*.mjs"],
+			"parserOptions": {
+				"project": ["./tsconfig.json"],
+				"sourceType": "module",
+				"ecmaVersion": "latest"
+			}
+		}
+	]
+}

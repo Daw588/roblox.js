@@ -1,0 +1,14 @@
+# .gitignore
+node_modules
+package-lock.json
+tsconfig.tsbuildinfo
+.env
+.vscode
+test
+
+# .npmignore
+src
+tsconfig.json
+.eslintignore
+.eslintrc
+.gitignore

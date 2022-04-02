@@ -1,0 +1,47 @@
+{
+	"name": "roblox.js",
+	"description": "Roblox API made easy.",
+	"version": "1.0.0",
+	"main": "./dist/index.js",
+	"type": "module",
+	"types": "./dist",
+	"scripts": {
+		"build": "tsc",
+		"lint": "eslint"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Daw588/roblox.js.git"
+	},
+	"keywords": [
+		"roblox.js",
+		"roblox",
+		"api",
+		"javascript",
+		"typescript",
+		"types",
+		"ease-of-use",
+		"easy"
+	],
+	"author": {
+		"name": "Daw588",
+		"email": "dave05.irl@gmail.com",
+		"url": "https://github.com/Daw588/"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Daw588/roblox.js/issues"
+	},
+	"homepage": "https://github.com/Daw588/roblox.js#readme",
+	"devDependencies": {
+		"@types/node": "^17.0.23",
+		"@typescript-eslint/eslint-plugin": "^5.17.0",
+		"@typescript-eslint/parser": "^5.17.0",
+		"dotenv": "^16.0.0",
+		"eslint": "^8.12.0",
+		"typescript": "^4.7.0-dev.20220401"
+	},
+	"dependencies": {
+		"node-fetch": "^3.2.3"
+	}
+}
