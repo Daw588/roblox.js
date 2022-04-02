@@ -171,7 +171,7 @@ export class DataStoreKeyInfo {
 	}
 }
 
-export class DataStoreSetterOptions {
+export class DataStoreSetOptions {
 	public metadata!: Record<string, string>;
 
 	constructor(metadata: Record<string, string>) {
@@ -251,7 +251,7 @@ export class DataStoreKeyPages {
 	}
 }
 
-export class Datastore {
+export class DataStore {
 	private game: Game;
 	private name: string;
 	private scope: string;
@@ -260,7 +260,7 @@ export class Datastore {
 
 	/**
 	 * Lets you store data that needs to persist between sessions, such as items in a player’s inventory or skill points. Data stores are shared per experience, so any place in an experience, including places on different servers, can access and change the same data.
-	 * @param game Game from which datastore will be retrieved.
+	 * @param game Game from which DataStore will be retrieved.
 	 * @param name Name of the data store.
 	 * @param scope A string specifying the scope.
 	 */
@@ -314,7 +314,7 @@ export class Datastore {
 	 * @param options Class that allows for metadata specification on the key.
 	 * @returns The version identifier of the newly created version
 	 */
-	async SetAsync(key: string, value: unknown, userIds: int64[], options?: DataStoreSetterOptions) {
+	async SetAsync(key: string, value: unknown, userIds: int64[] = [], options?: DataStoreSetOptions) {
 		if (!key) throw Error("Key cannot be empty");
 		if (value == undefined || null) throw Error("Value cannot be empty");
 		if (!userIds) throw Error("UserIds cannot be empty");
@@ -387,7 +387,7 @@ export class Datastore {
 	 * @param options Class that combines multiple additional parameters as custom metadata and allows for future extensibility.
 	 * @returns The updated value of the entry in the data store with the given key.
 	 */
-	async IncrementAsync(key: string, delta: int32, userIds: int64[] = [], options?: DataStoreSetterOptions) {
+	async IncrementAsync(key: string, delta: int32, userIds: int64[] = [], options?: DataStoreSetOptions) {
 		if (!key) throw Error("Key cannot be empty");
 		if (delta == undefined || null) throw Error("Delta cannot be empty");
 		if (!userIds) throw Error("UserIds cannot be empty");
