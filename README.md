@@ -10,12 +10,12 @@ A modern module that brings Roblox API to Javascript and Typescript with little 
 
 NPM
 ```bash
-npm i roblox.js
+npm i @daw588/roblox.js
 ```
 
 Yarn
 ```bash
-yarn add roblox.js
+yarn add @daw588/roblox.js
 ```
 
 # DataStores

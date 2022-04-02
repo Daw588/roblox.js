@@ -1,7 +1,7 @@
 {
-	"name": "roblox.js",
+	"name": "@daw588/roblox.js",
 	"description": "Roblox API made easy.",
-	"version": "1.0.0",
+	"version": "0.0.2",
 	"main": "./dist/index.js",
 	"type": "module",
 	"types": "./dist",
