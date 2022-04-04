@@ -30,6 +30,9 @@
 			"parser": "@typescript-eslint/parser",
 			"parserOptions": {
 				"project": ["./tsconfig.json"]
+			},
+			"rules": {
+				"no-console": "warn"
 			}
 		},
 		{
