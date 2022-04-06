@@ -13,10 +13,11 @@ import { Pages } from "./pages.js";
 import { Universe } from "../index.js";
 import * as utils from "../utils.js";
 
+// Config
+import { DATASTORE_API_BASE_ENDPOINT } from "../config/urls.js";
+
 // Libraries
 import fetch from "node-fetch";
-
-const DATASTORE_API_BASE_ENDPOINT = "https://apis.roblox.com/datastores/v1/universes";
 
 // TODO: Fix updatedTime
 export class DataStoreKeyInfo {

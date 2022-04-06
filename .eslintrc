@@ -36,7 +36,7 @@
 			}
 		},
 		{
-			"files": ["**/*.mjs"],
+			"files": ["**/*.js"],
 			"parserOptions": {
 				"project": ["./tsconfig.json"],
 				"sourceType": "module",

@@ -1,14 +1,27 @@
-# .gitignore
-node_modules
-package-lock.json
-tsconfig.tsbuildinfo
-.env
-.vscode
-test
+# NPM package users do not need...
 
-# .npmignore
+#... our secrets used for testing
+.env
+**/*.env
+
+#... our personal preferences
+.vscode
+
+#... test files
+test
+test/**
+
+#... typescript files as they already have compiled version from the dist folder
 src
+
+#... development configuration files
+node_modules
+node_modules/**
 tsconfig.json
 .eslintignore
 .eslintrc
 .gitignore
+
+#... automatically generated files
+package-lock.json
+tsconfig.tsbuildinfo

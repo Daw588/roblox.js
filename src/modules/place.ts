@@ -13,10 +13,8 @@ import * as utils from "../utils.js";
 import fetch from "node-fetch";
 import fs from "fs/promises";
 
-/**
- * @example https://apis.roblox.com/universes/v1/{universeId}/places/{placeId}/versions
- */
-const PLACE_MANAGEMENT_API_BASE_ENDPOINT = "https://apis.roblox.com/universes/v1";
+// Config
+import { PLACE_MANAGEMENT_API_BASE_ENDPOINT } from "../config/urls.js";
 
 /**
  * Place is a collection of environmental building blocks,

@@ -1,7 +1,22 @@
+# GitHub repository visitors and contributors do not need...
+
+#... our secrets used for testing
+.env
+**/*.env
+
+#... our personal preferences
+.vscode
+
+#... automatically generated files
 node_modules
+node_modules/**
 package-lock.json
 tsconfig.tsbuildinfo
-.env
-.vscode
-dist
+
+#... test files (not ready to be public yet)
 test
+test/**
+
+#... compiled files as they can compile them in their own environment
+dist
+dist/**

@@ -1,11 +1,12 @@
 {
 	"name": "@daw588/roblox.js",
-	"description": "Roblox API made easy.",
-	"version": "0.0.4",
+	"description": "NPM package that makes Roblox's Open Cloud almost as easy as the native Luau implementation.",
+	"version": "0.0.5",
 	"main": "./dist/index.js",
 	"type": "module",
 	"types": "./dist",
 	"scripts": {
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
 		"build": "tsc",
 		"lint": "eslint"
 	},
@@ -16,12 +17,12 @@
 	"keywords": [
 		"roblox.js",
 		"roblox",
-		"api",
-		"javascript",
+		"open-cloud",
+		"api-wrapper",
+		"nodejs",
 		"typescript",
 		"types",
-		"ease-of-use",
-		"easy"
+		"ease-of-use"
 	],
 	"author": {
 		"name": "Daw588",
@@ -34,11 +35,13 @@
 	},
 	"homepage": "https://github.com/Daw588/roblox.js#readme",
 	"devDependencies": {
+		"@types/jest": "^27.4.1",
 		"@types/node": "^17.0.23",
 		"@typescript-eslint/eslint-plugin": "^5.17.0",
 		"@typescript-eslint/parser": "^5.17.0",
 		"dotenv": "^16.0.0",
 		"eslint": "^8.12.0",
+		"jest": "^27.5.1",
 		"typescript": "^4.7.0-dev.20220403"
 	},
 	"dependencies": {
