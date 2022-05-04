@@ -82,10 +82,13 @@ export class Place {
 		});
 	
 		if (response.status !== 200) {
-			throw Error(`${response.status}: ${response.statusText}`);
+			return Promise.reject({
+				status: response.status,
+				statusText: response.statusText
+			});
 		}
 	
-		const data = await response.json() as ResponseJSON.PushVersion;
+		const data = utils.parseJSON(await response.text()) as ResponseJSON.PushVersion;
 		return data.versionNumber;
 	}
 

@@ -91,10 +91,13 @@ export class Pages<QueryParams, Headers, ItemData> {
 		});
 
 		if (response.status !== 200) {
-			throw Error(`${response.status}: ${response.statusText}`);
+			return Promise.reject({
+				status: response.status,
+				statusText: response.statusText
+			});
 		}
 
-		const data = await response.json() as PaginationData<ItemData>;
+		const data = utils.parseJSON(await response.text()) as PaginationData<ItemData>;
 
 		// Update the keys
 		const newKeys = data[this.keyName];
@@ -109,5 +112,6 @@ export class Pages<QueryParams, Headers, ItemData> {
 		
 		// Go to the next page via cursor
 		this.params.cursor = data.nextPageCursor;
+		return;
 	}
 }

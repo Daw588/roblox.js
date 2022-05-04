@@ -131,10 +131,13 @@ export class DataStore {
 		});
 
 		if (response.status !== 200) {
-			throw Error(`${response.status}: ${response.statusText}`);
+			return Promise.reject({
+				status: response.status,
+				statusText: response.statusText
+			});
 		}
 
-		const data = await response.json() as CustomDataType;
+		const data = utils.parseJSON(await response.text()) as CustomDataType;
 		return [data, new DataStoreKeyInfo(response)];
 	}
 
@@ -180,10 +183,13 @@ export class DataStore {
 		});
 
 		if (response.status !== 200) {
-			throw Error(`${response.status}: ${response.statusText}`);
+			return Promise.reject({
+				status: response.status,
+				statusText: response.statusText
+			});
 		}
 
-		const data = await response.json() as ResponseJSON.EntryVersionInfo;
+		const data = utils.parseJSON(await response.text()) as ResponseJSON.EntryVersionInfo;
 		return data.version;
 	}
 
@@ -220,7 +226,10 @@ export class DataStore {
 		});
 
 		if (response.status !== 200) {
-			throw Error(`${response.status}: ${response.statusText}`);
+			return Promise.reject({
+				status: response.status,
+				statusText: response.statusText
+			});
 		}
 
 		const data = await this.GetAsync<CustomDataType>(key);
@@ -255,7 +264,10 @@ export class DataStore {
 		});
 
 		if (response.status !== 204) {
-			throw Error(`${response.status}: ${response.statusText}`);
+			return Promise.reject({
+				status: response.status,
+				statusText: response.statusText
+			});
 		}
 
 		return previousData;
@@ -360,10 +372,13 @@ export class DataStore {
 		});
 
 		if (response.status !== 200) {
-			throw Error(`${response.status}: ${response.statusText}`);
+			return Promise.reject({
+				status: response.status,
+				statusText: response.statusText
+			});
 		}
 
-		const data = await response.json() as CustomDataType;
+		const data = utils.parseJSON(await response.text()) as CustomDataType;
 		return [data, new DataStoreKeyInfo(response)];
 	}
 }
