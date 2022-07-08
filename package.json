@@ -1,10 +1,10 @@
 {
 	"name": "@daw588/roblox.js",
 	"description": "NPM package that makes Roblox's Open Cloud almost as easy as the native Luau implementation.",
-	"version": "0.1.6",
-	"main": "./dist/index.js",
+	"version": "0.1.7",
 	"type": "module",
-	"types": "./dist",
+	"main": "dist/index.js",
+	"types": "dist/index",
 	"scripts": {
 		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
 		"build": "tsc",
