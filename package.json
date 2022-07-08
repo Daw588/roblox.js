@@ -1,7 +1,7 @@
 {
 	"name": "@daw588/roblox.js",
 	"description": "NPM package that makes Roblox's Open Cloud almost as easy as the native Luau implementation.",
-	"version": "0.0.6",
+	"version": "0.1.6",
 	"main": "./dist/index.js",
 	"type": "module",
 	"types": "./dist",
@@ -9,7 +9,9 @@
 		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
 		"build": "tsc",
 		"lint": "eslint",
-		"dev": "npm run build && npm link && npm link @daw588/roblox.js"
+		"dev": "npm run build && npm link && npm link @daw588/roblox.js",
+		"upgrade": "npm-check-updates && ncu -u && npm install",
+		"publish": "npm run build && npm publish --access public"
 	},
 	"repository": {
 		"type": "git",
@@ -36,16 +38,16 @@
 	},
 	"homepage": "https://github.com/Daw588/roblox.js#readme",
 	"devDependencies": {
-		"@types/jest": "^27.4.1",
-		"@types/node": "^17.0.23",
-		"@typescript-eslint/eslint-plugin": "^5.17.0",
-		"@typescript-eslint/parser": "^5.17.0",
-		"dotenv": "^16.0.0",
-		"eslint": "^8.12.0",
-		"jest": "^27.5.1",
-		"typescript": "^4.7.0-dev.20220403"
+		"@types/jest": "^28.1.4",
+		"@types/node": "^18.0.3",
+		"@typescript-eslint/eslint-plugin": "^5.30.5",
+		"@typescript-eslint/parser": "^5.30.5",
+		"dotenv": "^16.0.1",
+		"eslint": "^8.19.0",
+		"jest": "^28.1.2",
+		"typescript": "^4.7.4"
 	},
 	"dependencies": {
-		"node-fetch": "^3.2.3"
+		"node-fetch": "^3.2.6"
 	}
 }
