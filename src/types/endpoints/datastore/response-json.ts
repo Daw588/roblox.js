@@ -1,4 +1,4 @@
-import { int32 } from "../../misc/datatypes.js";
+import { int32 } from "../../misc/datatypes";
 
 export type EntryVersionInfo = {
 	version: string,

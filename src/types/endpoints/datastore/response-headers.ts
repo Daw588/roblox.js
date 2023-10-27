@@ -8,7 +8,7 @@ import type {
 	DateHeader,
 	ContentType,
 	RobloxEntryVersionCreatedTime
-} from "./headers.js";
+} from "./headers";
 
 export type ListDataStores =
 	DateHeader &

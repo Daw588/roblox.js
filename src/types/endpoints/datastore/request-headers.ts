@@ -7,7 +7,7 @@ import type {
 	RobloxEntryUserIds,
 	RobloxEntryVersion,
 	XApiKey
-} from "./headers.js";
+} from "./headers";
 
 export type ListDataStores =
 	XApiKey;

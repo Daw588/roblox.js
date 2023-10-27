@@ -13,10 +13,6 @@ node_modules/**
 package-lock.json
 tsconfig.tsbuildinfo
 
-#... test files (not ready to be public yet)
-test
-test/**
-
 #... compiled files as they can compile them in their own environment
 dist
 dist/**

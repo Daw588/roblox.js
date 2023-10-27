@@ -1,20 +1,15 @@
-// Types
-import type { int64 } from "../types/misc/datatypes.js";
+import type { int64 } from "../../types/misc/datatypes";
 
-import type * as RequestHeaders from "../types/endpoints/place-mangement/request-headers.js";
-import type * as QueryParams from "../types/endpoints/place-mangement/query-params.js";
-import type * as ResponseJSON from "../types/endpoints/place-mangement/response-json.js";
+import type * as RequestHeaders from "../../types/endpoints/place-mangement/request-headers";
+import type * as QueryParams from "../../types/endpoints/place-mangement/query-params";
+import type * as ResponseJSON from "../../types/endpoints/place-mangement/response-json";
 
-// Modules
-import { Universe } from "../index.js";
-import * as utils from "../utils.js";
+import { Universe } from "../../index";
+import * as utils from "../../lib/utils";
 
-// Libraries
-import fetch from "node-fetch";
-import fs from "fs/promises";
+import fs from "node:fs/promises";
 
-// Config
-import { PLACE_MANAGEMENT_API_BASE_ENDPOINT } from "../config/urls.js";
+import { PLACE_MANAGEMENT } from "../../config/urls";
 
 /**
  * Place is a collection of environmental building blocks,
@@ -34,7 +29,7 @@ export class Place {
 	constructor(universe: Universe, id: int64) {
 		this.universe = universe;
 		this.id = id;
-		this.url = `${PLACE_MANAGEMENT_API_BASE_ENDPOINT}/${this.universe.id}/places/${this.id}`;
+		this.url = `${PLACE_MANAGEMENT}/${this.universe.id}/places/${this.id}`;
 	}
 
 	/**

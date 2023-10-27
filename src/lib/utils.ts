@@ -1,6 +1,4 @@
-import type { RequestInfo } from "node-fetch";
-
-import crypto from "crypto";
+import crypto from "node:crypto";
 
 export type Params = { 
 	[key: string]: string | number | boolean
@@ -11,7 +9,7 @@ export type ParamsKey = keyof Params;
 export function buildUrl(url: string, params: Params) {
 	const urlObj = new URL(url);
 	Object.keys(params).forEach(key => urlObj.searchParams.append(key, params[key] as keyof ParamsKey));
-	return urlObj as unknown as RequestInfo;
+	return urlObj;
 }
 
 export function checksum(value: crypto.BinaryLike) {

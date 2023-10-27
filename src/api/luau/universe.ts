@@ -1,24 +1,15 @@
-// Types
-import { int64, int32 } from "../types/misc/datatypes.js";
+import { int64, int32 } from "../../types/misc/datatypes";
 
-import type * as DataStoreRequestHeaders from "../types/endpoints/datastore/request-headers.js";
-import type * as DataStoreQueryParams from "../types/endpoints/datastore/query-params.js";
-import type * as DataStoreResponseJSON from "../types/endpoints/datastore/response-json.js";
+import type * as DataStoreRequestHeaders from "../../types/endpoints/datastore/request-headers";
+import type * as DataStoreQueryParams from "../../types/endpoints/datastore/query-params";
+import type * as DataStoreResponseJSON from "../../types/endpoints/datastore/response-json";
 
-import type * as MessagingServiceRequestHeaders from "../types/endpoints/messaging-service/request-headers.js";
+import type * as MessagingServiceRequestHeaders from "../../types/endpoints/messaging-service/request-headers";
 
-// Modules
-import * as utils from "../utils.js";
-import { Pages } from "./pages.js";
+import * as utils from "../../lib/utils";
+import { Pages } from "./pages";
 
-// Config
-import {
-	DATASTORE_API_BASE_ENDPOINT,
-	MESSAGING_SERVICE_API_BASE_ENDPOINT
-} from "../config/urls.js";
-
-// Libraries
-import fetch from "node-fetch";
+import { DATA_STORE, MESSAGING_SERVICE } from "../../config/urls";
 
 /**
  * Universe is a collection of places, often referred
@@ -49,7 +40,7 @@ export class Universe {
 		utils.mustBeInteger("PageSize", pageSize);
 		if (pageSize > 50) throw Error("PageSize cannot be greater than 50");
 
-		const rawUrl = `${DATASTORE_API_BASE_ENDPOINT}/${this.id}/standard-datastores`;
+		const rawUrl = `${DATA_STORE}/${this.id}/standard-datastores`;
 
 		const queryParams: DataStoreQueryParams.ListDataStores = {
 			limit: pageSize,
@@ -87,7 +78,7 @@ export class Universe {
 			throw Error("Topic name cannot contain more than 80 characters");
 		}
 
-		const url = `${MESSAGING_SERVICE_API_BASE_ENDPOINT}/${this.id}/topics/${topic}`;
+		const url = `${MESSAGING_SERVICE}/${this.id}/topics/${topic}`;
 
 		const valueJSON = JSON.stringify({
 			message: message

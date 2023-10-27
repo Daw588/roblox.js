@@ -1,23 +1,15 @@
-// Types
-import type { int32, int64 } from "../types/misc/datatypes.js";
-import type { SortDirection } from "../types/misc/custom.js";
-import type { Response } from "node-fetch";
+import type { int32, int64 } from "../../types/misc/datatypes";
+import type { SortDirection } from "../../types/misc/custom";
 
-//import type * as ResponseHeaders from "./types/endpoints/datastore/response-headers.js";
-import type * as RequestHeaders from "../types/endpoints/datastore/request-headers.js";
-import type * as QueryParams from "../types/endpoints/datastore/query-params.js";
-import type * as ResponseJSON from "../types/endpoints/datastore/response-json.js";
+import type * as RequestHeaders from "../../types/endpoints/datastore/request-headers";
+import type * as QueryParams from "../../types/endpoints/datastore/query-params";
+import type * as ResponseJSON from "../../types/endpoints/datastore/response-json";
 
-// Modules
-import { Pages } from "./pages.js";
-import { Universe } from "../index.js";
-import * as utils from "../utils.js";
+import { Pages } from "./pages";
+import { Universe } from "../../index";
+import * as utils from "../../lib/utils";
 
-// Config
-import { DATASTORE_API_BASE_ENDPOINT } from "../config/urls.js";
-
-// Libraries
-import fetch from "node-fetch";
+import { DATA_STORE } from "../../config/urls";
 
 // TODO: Fix updatedTime
 export class DataStoreKeyInfo {
@@ -71,12 +63,6 @@ export class DataStoreOptions {
 	public allScopes = false;
 }
 
-/*
-export class DataStoreKeyPages extends Pages {
-
-}
-*/
-
 /**
  * Lets you store data that needs to persist between sessions,
  * such as items in a player's inventory or skill points. DataStores
@@ -101,7 +87,7 @@ export class DataStore {
 		this.name = name;
 		this.scope = scope;
 		this.options = options || new DataStoreOptions();
-		this.url = `${DATASTORE_API_BASE_ENDPOINT}/${this.universe.id}/standard-datastores/datastore`;
+		this.url = `${DATA_STORE}/${this.universe.id}/standard-datastores/datastore`;
 	}
 
 	/**

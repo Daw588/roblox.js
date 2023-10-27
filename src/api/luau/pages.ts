@@ -1,7 +1,5 @@
-import type { int32 } from "../types/misc/datatypes.js";
-import * as utils from "../utils.js";
-
-import fetch from "node-fetch";
+import type { int32 } from "../../types/misc/datatypes";
+import * as utils from "../../lib/utils";
 
 type PaginationParams<ExtendType> = ExtendType & {
 	cursor?: string,

@@ -1,7 +1,7 @@
 import type {
 	XApiKey,
 	ContentType
-} from "./headers.js";
+} from "./headers";
 
 export type PublishAsync = 
 	XApiKey &

@@ -1,22 +1,28 @@
 {
 	"name": "@daw588/roblox.js",
-	"description": "NPM package that makes Roblox's Open Cloud almost as easy as the native Luau implementation.",
-	"version": "0.1.7",
-	"type": "module",
-	"main": "dist/index.js",
-	"types": "dist/index",
-	"scripts": {
-		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-		"build": "tsc",
-		"lint": "eslint",
-		"dev": "npm run build && npm link && npm link @daw588/roblox.js",
-		"upgrade": "npm-check-updates && ncu -u && npm install",
-		"publish": "npm run build && npm publish --access public"
+	"version": "0.2.1-beta",
+	"author": {
+		"name": "Daw588",
+		"email": "dave05.irl@gmail.com",
+		"url": "https://daw588.glitch.me/"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Daw588/roblox.js.git"
 	},
+	"main": "dist/index.js",
+	"devDependencies": {
+		"@types/node": "^18.0.3",
+		"bun-plugin-dts": "^0.2.1",
+		"bun-types": "^1.0.6",
+		"eslint": "^8.19.0",
+		"typescript": "^5.2.2"
+	},
+	"bugs": {
+		"url": "https://github.com/Daw588/roblox.js/issues"
+	},
+	"description": "NPM package that makes Roblox's Open Cloud almost as easy as the native Luau implementation.",
+	"homepage": "https://github.com/Daw588/roblox.js#readme",
 	"keywords": [
 		"roblox.js",
 		"roblox",
@@ -27,27 +33,13 @@
 		"types",
 		"ease-of-use"
 	],
-	"author": {
-		"name": "Daw588",
-		"email": "dave05.irl@gmail.com",
-		"url": "https://daw588.glitch.me/"
-	},
 	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/Daw588/roblox.js/issues"
+	"scripts": {
+		"publish": "npm publish --access public",
+		"build": "bun run scripts/build.ts",
+		"test": "bun test",
+		"pack": "npm pack ."
 	},
-	"homepage": "https://github.com/Daw588/roblox.js#readme",
-	"devDependencies": {
-		"@types/jest": "^28.1.4",
-		"@types/node": "^18.0.3",
-		"@typescript-eslint/eslint-plugin": "^5.30.5",
-		"@typescript-eslint/parser": "^5.30.5",
-		"dotenv": "^16.0.1",
-		"eslint": "^8.19.0",
-		"jest": "^28.1.2",
-		"typescript": "^4.7.4"
-	},
-	"dependencies": {
-		"node-fetch": "^3.2.10"
-	}
+	"type": "module",
+	"types": "dist/index"
 }

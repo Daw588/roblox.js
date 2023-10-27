@@ -1,4 +1,4 @@
-import { int32 } from "../../misc/datatypes.js";
+import { int32 } from "../../misc/datatypes";
 
 type Prefix = {
 	/**
@@ -156,3 +156,4 @@ export type GetEntryVersion =
 	Scope &
 	EntryKey &
 	VersionId;
+	

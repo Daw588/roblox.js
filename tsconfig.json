@@ -1,43 +1,29 @@
 {
 	"compilerOptions": {
-		"incremental": true,
-		"target": "ES2017",
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
-		"rootDir": "./src",
-		"resolveJsonModule": true,
-		"declaration": true,
-		"declarationMap": true,
-		"sourceMap": true,
-		"outDir": "./dist",
-		"removeComments": false,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
+		"types": ["bun-types"],
+
+		"lib": ["ESNext"],
+		"module": "esnext",
+		"target": "esnext",
+	
+		"moduleResolution": "bundler",
+		"noEmit": true,
+		"allowImportingTsExtensions": true,
+		"moduleDetection": "force",
+	
+		"jsx": "react-jsx",
+		"allowJs": true,
+	
 		"strict": true,
-		"noImplicitAny": true,
-		"strictNullChecks": true,
-		"strictFunctionTypes": true,
-		"strictBindCallApply": true,
-		"strictPropertyInitialization": true,
-		"noImplicitThis": true,
-		"useUnknownInCatchVariables": true,
-		"alwaysStrict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"exactOptionalPropertyTypes": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"noUncheckedIndexedAccess": true,
-		"noImplicitOverride": true,
-		"noPropertyAccessFromIndexSignature": true,
-		"allowUnusedLabels": false,
-		"allowUnreachableCode": false,
+		"forceConsistentCasingInFileNames": true,
 		"skipLibCheck": true,
-		"lib": [
-			"ESNext"
-		]
+		"composite": true,
+		"downlevelIteration": true,
+		"allowSyntheticDefaultImports": true
 	},
 	"include": [
-		"./src"
+		"./src",
+		"./tests",
+		"./scripts"
 	]
 }

@@ -8,8 +8,12 @@
 .vscode
 
 #... test files
-test
-test/**
+tests
+tests/**
+
+#... scripts
+scripts
+scripts/**
 
 #... typescript files as they already have compiled version from the dist folder
 src
@@ -25,3 +29,4 @@ tsconfig.json
 #... automatically generated files
 package-lock.json
 tsconfig.tsbuildinfo
+bun.lockb

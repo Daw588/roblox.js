@@ -5,6 +5,7 @@
 	can access the appropriate modules.
 */
 
-export * from "./modules/universe.js";
-export * from "./modules/place.js";
-export * from "./modules/datastore.js";
+export * from "./api/luau/universe";
+export * from "./api/luau/place";
+export * from "./api/luau/data-store";
+export * from "./api/luau/ordered-data-store";
