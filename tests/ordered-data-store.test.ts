@@ -53,9 +53,9 @@ describe("GetSortedAsync", async () => {
 		expect(pages.IsFinished).toBeBoolean();
 	});
 
-	test("Must return exactly 1 entry", () => {
+	// test("Must return exactly 1 entry", () => {
 		
-	});
+	// });
 });
 
 describe("SetAsync", () => {
@@ -129,7 +129,6 @@ describe("UpdateAsync", () => {
 
 		const updatedValue = await store.UpdateAsync("Mark", currentValue => {
 			expect(currentValue).toBe(100);
-			expect(currentValue + 1).toBe(101);
 			return currentValue + 1;
 		});
 
@@ -141,7 +140,6 @@ describe("UpdateAsync", () => {
 
 		const updatedValue = await store.UpdateAsync("Mark", currentValue => {
 			expect(currentValue).toBe(100);
-			expect(currentValue + 1).toBe(101);
 			return currentValue + 1;
 		});
 
